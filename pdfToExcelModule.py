@@ -44,4 +44,4 @@ def parse_iva_data(data_input):
     return pd.DataFrame([result])
 
 df = parse_iva_data(data)
-print(df)
+df.to_csv('formularioCompactoResumen.csv')

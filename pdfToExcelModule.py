@@ -12,10 +12,6 @@ def extractorDatosFormulario(x):
 
 data= extractorDatosFormulario(pdfData)
 
-import pandas as pd
-import re
-import ast
-
 def parse_iva_data(data_input):
     """
     Extrae pares clave-valor de una lista o texto con formato de lista.
@@ -46,15 +42,6 @@ def parse_iva_data(data_input):
             result[key] = value
 
     return pd.DataFrame([result])
-
-#data = [
-#    '562MONTO SIN DER. A CRED. FISCAL 10.000',
-#    '504REMANENTE CRÉDITO MES ANTERIOR 65.346',
-#    '544RECUP. IMP. ESP. DIESEL (Art. 2) 0',
-#    '779Monto de IVA postergado 6 o 12 cuotas 0',
-#    '537TOTAL CRÉDITOS 65.346',
-#    '089IMP. DETERM. IVA 0'
-#]
 
 df = parse_iva_data(data)
 print(df)

@@ -4,6 +4,12 @@ import re
 
 pdfData = "pdfFormularioCompacto.pdf"
 
+def auxiliaryExtractor(x):
+    reader = PdfReader(x)
+    page = reader.pages[0]
+    text = page.extract_text().split("\n")
+    return text[6]
+
 def extractorDatosFormulario(x):
     reader = PdfReader(x)
     page = reader.pages[0]
@@ -31,7 +37,7 @@ def parse_iva_data(data_input):
     if not data_list:
         raise ValueError("La lista está vacía.")
 
-    result = {}
+    result = {"empresa": auxiliaryExtractor(pdfData)} | {}
 
     # Procesar todos los ítems de la lista
     for item in data_list:

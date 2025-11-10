@@ -29,3 +29,5 @@ def pokemon_printer(pokemonName):
 
 pokemon_printer("pikachu")
 pokemon_printer("typhlosion")
+#pokemon_printer("electrifier")
+pokemon_printer("charmander")

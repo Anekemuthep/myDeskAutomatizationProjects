@@ -5,6 +5,9 @@ import re
 pdfData = "pdfFormularioCompacto.pdf"
 
 def auxiliaryExtractor(x):
+    """
+    Extrae el nombre de la empresa para agregarlo como columna incial a la funcion creadora de tabla.
+    """
     reader = PdfReader(x)
     page = reader.pages[0]
     text = page.extract_text().split("\n")
